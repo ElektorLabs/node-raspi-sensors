@@ -1,0 +1,3 @@
+var Gpio = require('pigpio').Gpio;
+var xvar x = new Gpio(18, {mode: Gpio.INPUT});
+ = new Gpio(18, {mode: Gpio.INPUT});
