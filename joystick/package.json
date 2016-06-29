@@ -1,0 +1,14 @@
+{
+  "name": "joystick",
+  "version": "1.0.0",
+  "description": "KY-023",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "pigpio": "^0.3.4"
+  }
+}
