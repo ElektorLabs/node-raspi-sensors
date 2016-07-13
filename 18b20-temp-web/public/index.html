@@ -19,15 +19,18 @@
       $http.get("temp").then(function (response) {
           $scope.temp = response.data;
       });
+
+			$scope.testTimer = function() {
+						$interval(function() {
+							$http.get("temp").then(function (response) {
+									$scope.temp = response.data;
+							});
+						}, 100);
+				};
+
   });
 
-	$scope.testTimer = function() {
-        $interval(function() {
-					$http.get("temp").then(function (response) {
-							$scope.temp = response.data;
-					});
-        }, 100);
-    };
+
   </script>
 
 </body>
