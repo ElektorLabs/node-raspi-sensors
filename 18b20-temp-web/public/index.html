@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app="myApp" ng-controller="tempCtrl">
+
+<head>
+	<title>Elektor example: Raspberry Pi DS18b20 Temperature</title>
+	<script type="text/javascript"
+		src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+
+</head>
+<body>
+
+
+      <H1  ng-controller="tempCtrl">Temperature: {{ temp }}</H1>
+
+
+  <script>
+  var app = angular.module('myApp', []);
+  app.controller('tempCtrl', function($scope, $http) {
+      $http.get("http://localhost/temp").then(function (response) {
+          $scope.temp = response.data;
+      });
+  });
+  </script>
+
+</body>
+
+</html>

@@ -30,9 +30,12 @@ ds18b20.temperature(myID, function(err, value) {
 
 setInterval(getTemp, 1000);
 
+app.use(express.static('public'));
+/*
 app.get('/', function (req,res){
   res.send('<HEAD><META HTTP-EQUIV="refresh" CONTENT="1"</HEAD><BODY><H1>Current temperature: '+temperature+'</H1></BODY>');
 });
+*/
 
 app.get('/temp', function(req, res){
   res.header("Access-Control-Allow-Origin","*");
@@ -43,4 +46,3 @@ app.get('/temp', function(req, res){
 app.listen(80, function(){
   console.log('listening on port 80');
 });
-
