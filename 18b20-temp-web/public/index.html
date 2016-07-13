@@ -12,7 +12,6 @@
 
 
       <H1  ng-controller="tempCtrl">Temperature: {{ temp }}</H1>
-      <button ng-click="testTimer()">Start Timer</button>
 
   <script>
   var app = angular.module('myApp', []);
@@ -21,13 +20,15 @@
           $scope.temp = response.data;
       });
 
-			$scope.testTimer = function() {
+
 						$interval(function() {
 							$http.get("temp").then(function (response) {
+								
 									$scope.temp = response.data;
+									console.log('temp: '+$scope.temp);
 							});
-						}, 100);
-				};
+						}, 1000);
+
 
   });
 
