@@ -35,6 +35,8 @@ app.get('/', function (req,res){
 });
 
 app.get('/temp', function(req, res){
+  res.header("Access-Control-Allow-Origin","*");
+  res.header("Access-Control-Allow-Headers", "X-Request-With");
   res.send(''+temperature);
 });
 
