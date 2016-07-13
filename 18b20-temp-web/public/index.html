@@ -16,7 +16,7 @@
   <script>
   var app = angular.module('myApp', []);
   app.controller('tempCtrl', function($scope, $http) {
-      $http.get("http://localhost/temp").then(function (response) {
+      $http.get("temp").then(function (response) {
           $scope.temp = response.data;
       });
   });
